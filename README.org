@@ -1,0 +1,12 @@
+* Latex Autocompiler
+
+This is a [[https://shakebuild.org][shake]] script to compile =.tex= files in certain subdirectories to PDF.
+Right now it only watches for slides.  If a file =slides.tex= resides and a directory that ends in =-slides=,
+the script will run =latexmk= on it and rename it according to the directory name.
+For example, =cs101/introduction-slides/slides.tex= will be compiled to =cs101/introduction-slides/introduction-slides.pdf=.
+
+The script will also search for any =latex= subdirectory from the document's directory to the root where the script
+is located and add it to the latex path.
+
+Currenty the script only checks =slides.tex= but I will have it add the contents of the =latex= subdirectories and other
+includes as dependencies in the future.
