@@ -41,6 +41,8 @@ main = shakeArgs shakeOptions{shakeFiles="_build"} $ do
     phony "clean" $ do
         putNormal "Cleaning files...."
         removeFilesAfter "_build" ["//*"]
+        cmd_ "rm -f slides.nav slides.snm *-slides.pdf"
+        cmd_ "rm -rf _minted-slides"
         cmd "latexmk -C slides.tex"
 
 --    phony "info" $ do
